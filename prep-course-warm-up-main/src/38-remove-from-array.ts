@@ -1,6 +1,9 @@
 export {};
 
-const removeFromArray = function() {};
+const removeFromArray = function(numbers: number[], ...remove: number[]):number[] {
+    return numbers.filter(number => !remove.includes(number))
+
+};
 
 console.log(removeFromArray([1, 2, 3, 4], 3)); // Expected output: [1, 2, 4]
 console.log(removeFromArray([1, 2, 3, 4], 7)); // Expected output: [1, 2, 3, 4]
@@ -11,5 +14,3 @@ console.log(removeFromArray([1, 2, 3, 4], 7, 2)); // Expected output: [1, 3, 4]
  * Go back to exercise 15-greatest-number and refactor your previous solution so that
  * the function can accept unlimited number of arguments and still return the largest number.
  */
-
-///I am going to remove this from array

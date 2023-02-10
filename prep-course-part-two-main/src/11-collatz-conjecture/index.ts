@@ -22,6 +22,9 @@
  * Resulting in 9 steps. So for input n = 12, the return value would be 9.
  */
 
-function steps(n: number) {}
+function steps(start: number) {
+    
+};
+
 
 export { steps };

@@ -12,7 +12,7 @@ export {};
 
 const pythagoreanTheorem = (leg1: number, leg2: number) => {
     return (Math.sqrt((leg1*leg1) + (leg2*leg2)));
-    
+   
 };
 
 console.log(pythagoreanTheorem(2, 4)); // Expected result: 4.47213595499958

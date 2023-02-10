@@ -13,6 +13,18 @@
  * palindrome("abcdefg") === false
  */
 
-function palindrome(str: string) {}
+function palindrome(str: string) {
+    let newString = '';
+    for (let i = str.length-1; i >= 0; i--) {
+       newString += str[i]         
+    }
+    return str === newString? true : false
+}
 
 export { palindrome };
+
+/*
+1. reverse the word
+2. check if the reversed word is the same as the original
+*/
+

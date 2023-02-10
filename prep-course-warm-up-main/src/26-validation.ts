@@ -11,9 +11,9 @@ export {};
 const excludedNums = [6, 14, 91, 111];
 
 // You are allowed to edit only this function
-function validate(num: number | string) {
+function validate(num: number | string): boolean {
   const excluded = excludedNums.every((number: number) => number !== num)
-    if(typeof num === 'number' && Number.isInteger(num) && excluded ){
+  if(typeof num === 'number' && Number.isInteger(num) && excluded ){
       return true
     }else{
       return false

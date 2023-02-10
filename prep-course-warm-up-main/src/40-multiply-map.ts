@@ -8,10 +8,20 @@ export {};
  * and recreate the logic yourself.
  */
 
-const map = () => {};
+const map = (array: number[], action: (num: number) => number): number[] => {
+  const result: number[] = [];
+  for (let i = 0; i < array.length; i++) {
+    result.push(action(array[i]));
+  }
+  return result;
+};
 
 const numbers = [1, 2, 3];
 const doubled = map(numbers, function(number) {
   return number * 2;
 });
 console.log(doubled); // Expected result: [2, 4, 6]
+
+/* 1. select each number from the array
+    2. call the function for each of the elements
+    3. after put each element in a new array and return that new array as the result; */

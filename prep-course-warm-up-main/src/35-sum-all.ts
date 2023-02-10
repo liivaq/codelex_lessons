@@ -6,13 +6,21 @@ export {};
  *  - 1, 4 will return 1 + 2 + 3 + 4 which is 10
  */
 
-const sumAll = (numberOne: number, numberTwo: number) => {
+/*const sumAll = (numberOne: number, numberTwo: number) => {
     let sum: number[] = []    
     for (let i = numberOne; i <= numberTwo; i++){
         sum.push(i)
     }
 return sum.reduce((a,b) => a + b);
            
+} */
+
+const sumAll = (numberOne: number, numberTwo: number) => {
+    let sum = 0
+    for (let i = numberOne; i <= numberTwo; i++){
+        sum += i
+    }
+return sum
 }
 
 

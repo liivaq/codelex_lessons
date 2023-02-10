@@ -11,6 +11,24 @@
  * capitalize('look, it is working!') === 'Look, It Is Working!'
  */
 
-function capitalize(str: string) {}
+function capitalize(str: string) {
+    let result = str[0].toUpperCase();
+  
+    for (let i = 1; i < str.length; i++) {
+      if (str[i - 1] === ' ') {
+        result += str[i].toUpperCase();
+      } else {
+        result += str[i];
+      }
+    }
+  
+    return result;
+  }
+
+/*
+result capitalizes the first letter of the sentence, then the for loop goes through
+checking, if in the index before the letter its a space - if it is a space, the letter is capitalized 
+and added to result, if its not a space, then the letter is added to the result as is
+*/
 
 export { capitalize };
