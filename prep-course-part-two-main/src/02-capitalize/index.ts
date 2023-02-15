@@ -11,19 +11,10 @@
  * capitalize('look, it is working!') === 'Look, It Is Working!'
  */
 
-function capitalize(str: string) {
-    let result = str[0].toUpperCase();
-  
-    for (let i = 1; i < str.length; i++) {
-      if (str[i - 1] === ' ') {
-        result += str[i].toUpperCase();
-      } else {
-        result += str[i];
-      }
-    }
-  
-    return result;
-  }
+function capitalize(sentence: string) {
+    const words = sentence.split(' ');
+    return words.map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+}
 
 /*
 result capitalizes the first letter of the sentence, then the for loop goes through

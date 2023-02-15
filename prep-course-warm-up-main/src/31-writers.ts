@@ -5,8 +5,6 @@ export {};
  * "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
  */
 
-//const getTheTitles = (books: {title: string, author: string}[]) => books.map(book => book.title);
-
 const writers = [
   {
     firstName: "Virginia",

@@ -5,12 +5,16 @@ export {};
  */
 
 function protectEmail (email: string){
+    
     const userMail = email.substring(0, email.indexOf('@'));
     const domain = email.substring(email.indexOf('@'), email.length)
-     if(userMail.length >5){
+     
+    if(userMail.length >5){
         return `${userMail.slice(0,3)}...${domain}`
+
     }else if(userMail.length >4){
         return `${userMail.slice(0,2)}...${domain}`
+        
     }else {
         return `...${domain}`
     }

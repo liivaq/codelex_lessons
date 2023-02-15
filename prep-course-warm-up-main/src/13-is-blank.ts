@@ -5,7 +5,7 @@ export {};
 /**
  * Create a function called isBlank, which checks if passed string is blank or not
  */
-function isBlank (value: string | null) {
+function isBlank (value: string | null): boolean {
      return !value || value.trim() === ""        
 }
 

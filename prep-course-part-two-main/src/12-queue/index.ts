@@ -14,6 +14,7 @@
 
 class Queue {
   queue: number[] = []
+  
   add(n: number) {
     this.queue.push(n)
   }

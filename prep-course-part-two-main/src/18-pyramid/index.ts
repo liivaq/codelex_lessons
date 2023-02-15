@@ -16,6 +16,23 @@
  *              '#####'
  */
 
-function pyramid(n: number) {}
+/*function pyramid(n: number): void {
 
+}*/
+
+function pyramid(n: number): void {
+    const midpoint = n-1;
+    for (let row = 0; row < n; row++) {
+        let level = '';
+        for (let col = 0; col < 2 * n - 1; col++) {
+          if (midpoint - row <= col && midpoint + row >= col) {
+            level += '#';
+          } else {
+            level += ' ';
+          }
+        }
+        console.log(level);
+      }
+    
+  }
 export { pyramid };

@@ -1,24 +1,40 @@
 export {};
 
+interface I_Book {
+  title: string;
+  author: string;
+  isRead: boolean;
+}
+
 const library = [
   {
     title: "Bill Gates",
     author: "The Road Ahead",
-    isRead: true
+    isRead: true,
   },
   {
     title: "Steve Jobs",
     author: "Walter Isaacson",
-    isRead: true
+    isRead: true,
   },
   {
     title: "Mockingjay: The Final Book of The Hunger Games",
     author: "Suzanne Collins",
-    isRead: false
-  }
+    isRead: false,
+  },
 ];
 
+const showStatus = (books: I_Book[]) => {
+  books.forEach((book) =>
+    console.log(
+      `${book.isRead ? "Already read" : "You still need to read"} '${
+        book.title
+      }' by ${book.author}.`
+    )
+  );
+};
 
+showStatus(library);
 
 /*
   Expected output:
@@ -28,9 +44,3 @@ const library = [
   You still need to read 'Mockingjay: The Final Book of The Hunger Games' by Suzanne Collins.
 
 */
-const showStatus = (library: {title: string, author: string, isRead: boolean}[]) => {
-  library.forEach(book => {
-    console.log(`${book.isRead ? "Already read" : "You still need to read"} '${book.title}' by ${book.author}.`);
-  })};
-
-  showStatus(library)

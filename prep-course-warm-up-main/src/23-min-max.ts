@@ -15,12 +15,12 @@ const min = (array: number[]) => {
      return Math.max(...array);
  }
 
-//Version one without Math (works)
+//Version one without Math
 /*const min = (array: number[]) => array.reduce((prev,next) => prev>next ? next : prev);
 const max = (array:number []) => array.reduce((prev,next) => prev<next ? next : prev);*/
 
 
- //Version two without Math(works)
+ //Version two without Math
 /*const min = (array: number[]) => {
     array.sort((a, b) => a - b)
     return array[0]

@@ -12,12 +12,9 @@
  * reverseInt(-90) === -9
  */
 
-function reverse(int: number) {
-    return (
-        parseFloat(int.toString().split('').reverse().join(''))*Math.sign(int)
-    )     
+function reverse(integer: number) {
+    return parseInt(integer.toString().split('').reverse().join(''))*Math.sign(integer);   
 }
-
 
 export { reverse };
 
@@ -28,6 +25,6 @@ export { reverse };
 3. reverse the array;
 4. turn the array back to string;
 5. turn the string to number 
-6. somehow deal with the negative numbers?
+6. somehow deal with the negative numbers( Math.sign returns -1 or 1 depending on the sign the integer has)
 
 */

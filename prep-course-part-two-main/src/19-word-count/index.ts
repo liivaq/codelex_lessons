@@ -10,7 +10,23 @@
  */
 
 class Words {
-  count(str: string) {}
+     
+  count(sentence: string) {
+    
+    const wordCounts: { [key: string]: number } = {};
+    
+    const words = sentence.trim().toLowerCase().split(/\s+/); 
+   
+    for (const word of words) {
+      if (!wordCounts[word]) {
+        wordCounts[word] = 0;
+      }
+
+      wordCounts[word]++;
+    }
+
+    return wordCounts;
+  }
 }
 
 export { Words };

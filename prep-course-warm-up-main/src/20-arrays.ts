@@ -10,10 +10,22 @@ export {};
 
 // works with multiple people in the array
 
-function stringToArray (listOfPeople: string[]) {
+/*function stringToArray (listOfPeople: string[]) {
     return listOfPeople.flatMap(person => person.split(' '))
-}
+}*/
 
+function stringToArray (listOfNames: string[]){
+    let resultArray: string[] =[]
+    for (let i = 0; i < listOfNames.length; i++) {
+        const name = listOfNames [i]
+        const nameSurnameArr = name.split(' ')
+        
+        for(let j = 0; j < nameSurnameArr.length; j++){
+            resultArray.push(nameSurnameArr[j])
+        }                      
+    }
+    return resultArray
+}
 
 
 // works with one person in the array
@@ -22,7 +34,7 @@ function stringToArray (listOfPeople: string[]) {
     return listOfPeople.toString().split(' ')
 }*/
 
-console.log(stringToArray(["John Doe", "Dane Much"])); // Expected output: ['John', 'Doe']
+console.log(stringToArray(["John Doe", "Code Much"])); // Expected output: ['John', 'Doe']
 
 /* 1. select each array element
 2. split elements by words

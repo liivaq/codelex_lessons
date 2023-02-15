@@ -1,6 +1,6 @@
 export {};
 
-function tidyUpString(str: string) {
+function tidyUpString(str: string): string {
   return str
     .trim()
     .toLowerCase()
@@ -8,7 +8,7 @@ function tidyUpString(str: string) {
 }
 
 // You are allowed to edit this function
-function capitalise(str: string){
+function capitalise(str: string): string {
   const firstLetter = str[0].toUpperCase()
   return firstLetter + str.substring(1)
 }

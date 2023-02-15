@@ -28,11 +28,26 @@
  */
 
 class PhoneNumber {
-  constructor(input: string) {}
+  phone: string
 
-  number() {
-    return "";
+  constructor(phone: string) {
+    this.phone = phone
   }
-}
+
+  number(): string | null {
+  
+      const cleaned = this.phone.replace(/\D/g, '').replace(/^1/, '');
+  
+      if (cleaned.length !== 10
+          || cleaned.charAt(0) === '0'
+          || cleaned.charAt(0) === '1'
+          || cleaned.charAt(3) === '0'
+          || cleaned.charAt(3) === '1') {
+        return null;
+      }
+  
+      return cleaned;
+    }
+  }
 
 export { PhoneNumber };

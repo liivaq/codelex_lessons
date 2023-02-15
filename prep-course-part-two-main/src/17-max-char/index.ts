@@ -9,6 +9,11 @@
  * maxChar("apple 1231111") === "1"
  */
 
-function maxChar(str: string) {}
+function maxChar(word: string) {
+    const newArray = word.split('')
+
+    return newArray.sort((a,b) => newArray.filter(c => c === a).length - newArray.filter(c => c === b).length).pop();  
+     
+}
 
 export { maxChar };

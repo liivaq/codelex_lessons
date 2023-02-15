@@ -6,12 +6,10 @@ export {};
  */
 
 function draw(lines:number) {
-    let drawStar = ''
-    for (let i = 0; i < lines; i++) {
-        console.log(drawStar += '*')
+     for (let i = 1; i <= lines; i++) {
+        console.log('*'.repeat(i))
     }
 }
-
 draw(3);
 /* Expected output:
 

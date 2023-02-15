@@ -8,11 +8,11 @@
 
 function parse(input: string) {
     let acronym = '';
-    const words = input.replace('-', ' ').replace(/[^A-Za-z ]/g,"").split(' ');
-    words.forEach((word) => {
+    const cleanWords = input.replace(/[^a-zA-Z^']/g, ' ').split(' ');
+    cleanWords.forEach((word) => {
         const letter = word[0];
         const nextLetter = letter ? letter.toUpperCase() : "";
-        acronym = acronym + nextLetter;
+        acronym += nextLetter;
     })
     return acronym
 }

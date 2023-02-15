@@ -10,6 +10,7 @@
  */
 
 const allVowels: string[] = ['a', 'e', 'i', 'o', 'u']
+
 function vowels(word: string): number {
     const stringToArray = word.toLowerCase().split('');
     

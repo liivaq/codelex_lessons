@@ -16,27 +16,22 @@ export {};
 
 // You are allowed to change this function
 
+const TRANSACTION_FEE = 1.01
 const RATE_GBP_USD = 1.19
 const RATE_GBP_BRL = 6.4
 
-function calculatePriceWithFee(price: number){
-    return price * 1.01
-}
-
-function formatPrice(price: number): string{
+function formatCurrency(price: number): string {
     return price.toFixed(2)
 }
 
 function convertCurrency(price: number, rate: number){
-    const priceConverted = price * rate
-    const priceWithFee = calculatePriceWithFee(priceConverted)
-    return formatPrice(priceWithFee)
+   return price*rate*TRANSACTION_FEE
 }
 
 const product = "You don't know JS";
 const price = 12.5;
-const priceInUSD = convertCurrency(price, RATE_GBP_USD);
-const priceInBRL = convertCurrency(price, RATE_GBP_BRL);
+const priceInUSD = formatCurrency(convertCurrency(price, RATE_GBP_USD));
+const priceInBRL = formatCurrency(convertCurrency(price, RATE_GBP_BRL));
 
 console.log("Product: " + product);
 console.log("Price: $" + priceInUSD);

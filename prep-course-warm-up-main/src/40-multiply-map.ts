@@ -22,6 +22,3 @@ const doubled = map(numbers, function(number) {
 });
 console.log(doubled); // Expected result: [2, 4, 6]
 
-/* 1. select each number from the array
-    2. call the function for each of the elements
-    3. after put each element in a new array and return that new array as the result; */

@@ -17,19 +17,12 @@
 }
 */
 
-function reverse(str: string){
+function reverse(word: string){
     let newString = '';
-    for (let i = str.length-1; i >= 0; i--) {
-        newString += str[i]
+    for (let i = word.length-1; i >= 0; i--) {
+        newString += word[i]
     }
     return newString
 }
 
 export { reverse };
-
-/*
-1. split string into an array
-2. reverse the array
-3. turn the array back into a string
-
-*/
