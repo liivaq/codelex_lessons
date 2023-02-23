@@ -8,34 +8,23 @@ export {};
  *  - https://javascript.info/array
  */
 
-// works with multiple people in the array
-
 /*function stringToArray (listOfPeople: string[]) {
     return listOfPeople.flatMap(person => person.split(' '))
 }*/
 
-function stringToArray (listOfNames: string[]){
-    let resultArray: string[] =[]
-    for (let i = 0; i < listOfNames.length; i++) {
-        const name = listOfNames [i]
-        const nameSurnameArr = name.split(' ')
-        
-        for(let j = 0; j < nameSurnameArr.length; j++){
-            resultArray.push(nameSurnameArr[j])
-        }                      
+function stringToArray(listOfNames: string[]) {
+  let resultArray: string[] = [];
+  for (let i = 0; i < listOfNames.length; i++) {
+    const name = listOfNames[i];
+    const nameSurnameArr = name.split(" ");
+
+    for (let j = 0; j < nameSurnameArr.length; j++) {
+      resultArray.push(nameSurnameArr[j]);
     }
-    return resultArray
+  }
+  return resultArray;
 }
 
 
-// works with one person in the array
 
-/*function stringToArray (listOfPeople: string[]) {
-    return listOfPeople.toString().split(' ')
-}*/
-
-console.log(stringToArray(["John Doe", "Code Much"])); // Expected output: ['John', 'Doe']
-
-/* 1. select each array element
-2. split elements by words
-3. put the words in an array */
+console.log(stringToArray(["John Doe"])); // Expected output: ['John', 'Doe']

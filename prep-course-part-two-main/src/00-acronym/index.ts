@@ -7,14 +7,10 @@
  */
 
 function parse(input: string) {
-    let acronym = '';
-    const cleanWords = input.replace(/[^a-zA-Z^']/g, ' ').split(' ');
-    cleanWords.forEach((word) => {
-        const letter = word[0];
-        const nextLetter = letter ? letter.toUpperCase() : "";
-        acronym += nextLetter;
-    })
-    return acronym
+    const cleanWords = input.replace("'", '').replace(/[\W_\^']+/g, ' ');
+    const wordsArray = cleanWords.split(' ')
+    const result = wordsArray.map(word => word[0].toUpperCase())
+    return result.join('')
 }
 
 export { parse };

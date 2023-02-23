@@ -12,25 +12,24 @@ export {};
  */
 
 class Circle {
-  radius: number
+  radius: number;
 
-  constructor(radius: number){
-    this.radius = radius
+  constructor(radius: number) {
+    this.radius = radius;
   }
 
   area() {
-    return Math.round(Math.PI*(Math.pow(this.radius, 2))*100)/100
+    return Math.round(Math.PI * Math.pow(this.radius, 2) * 100) / 100;
   }
 
-  perimeter(){
-    return Math.round((2 * Math.PI * this.radius)*100)/100
+  perimeter() {
+    return Math.round(2 * Math.PI * this.radius * 100) / 100;
   }
 }
 
 const c = new Circle(3);
 console.log("Area =", c.area()); // Expected output: Area = 28.27
 console.log("Perimeter =", c.perimeter()); // Expected output: Perimeter = 18.85
-
 
 /**
  * This was the last exercise in this repository.

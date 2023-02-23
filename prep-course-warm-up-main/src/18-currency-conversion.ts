@@ -8,8 +8,8 @@ export {};
  */
 
 // You are allowed to change only this function
-function convertToUSD(amount:number) {
-    return (amount*1.4).toFixed(2);
+function convertToUSD(amount: number) {
+  return (amount * 1.4).toFixed(2);
 }
 
 const product = "You don't know JS";

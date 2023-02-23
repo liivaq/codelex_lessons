@@ -15,7 +15,7 @@
 
 function longestWord(sentence: string) {
     let sentenceArray = sentence.split(/[^a-zA-Z]/)
-    return sentenceArray.reduce((a, b) => a.length >= b.length? a : b)
+    return sentenceArray.reduce((a, b) => a.length >= b.length ? a : b)
 }
 
 export { longestWord };

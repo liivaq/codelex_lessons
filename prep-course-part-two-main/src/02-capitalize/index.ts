@@ -16,10 +16,4 @@ function capitalize(sentence: string) {
     return words.map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
 }
 
-/*
-result capitalizes the first letter of the sentence, then the for loop goes through
-checking, if in the index before the letter its a space - if it is a space, the letter is capitalized 
-and added to result, if its not a space, then the letter is added to the result as is
-*/
-
 export { capitalize };

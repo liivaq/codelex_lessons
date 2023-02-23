@@ -5,11 +5,13 @@ export {};
  *  - https://blog.codeanalogies.com/2017/11/07/javascript-for-loops-explained/
  */
 
-function draw(lines:number) {
-     for (let i = 1; i <= lines; i++) {
-        console.log('*'.repeat(i))
-    }
+function draw(lines: number) {
+  let drawing = ''
+  for (let i = 1; i <= lines; i++) {
+    console.log(drawing += '*');
+  }
 }
+
 draw(3);
 /* Expected output:
 

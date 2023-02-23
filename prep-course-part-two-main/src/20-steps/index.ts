@@ -19,9 +19,22 @@
  *            '####'
  */
 
-function steps(lines: number) {
+/*function steps(lines: number) {
     for (let i = 1; i <= lines; i++) {
         console.log('#'.repeat(i) + ' '.repeat(lines - i));
+    }
+}*/
+
+function steps(rows: number){
+    for(let i = 1; i <= rows; i++ ){
+        let drawing = ''
+        for(let j = 1; j<= i; j++){
+            drawing += '#'
+        }
+        for(let k = 1; k <= rows - i; k++){
+            drawing += ' '
+        }
+        console.log(drawing) 
     }
 }
 

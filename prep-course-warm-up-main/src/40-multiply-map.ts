@@ -10,6 +10,7 @@ export {};
 
 const map = (array: number[], action: (num: number) => number): number[] => {
   const result: number[] = [];
+  
   for (let i = 0; i < array.length; i++) {
     result.push(action(array[i]));
   }

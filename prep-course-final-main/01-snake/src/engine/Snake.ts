@@ -1,55 +1,53 @@
 import { Cell } from "./Cell";
 import { Direction } from "./Direction";
 
+
 export class Snake {
-  head: Cell = new Cell(2, 0)
-  tail: Cell[] = [new Cell(0, 0), new Cell(1, 0)]
-  direction: Direction = 'Right'
-
-
+  head: Cell = new Cell(2, 0);
+  tail: Cell[] = [new Cell(0, 0), new Cell(1, 0)];
+  direction: Direction = "Right";
+    
   setDirection(newDirection: Direction) {
-    this.direction = newDirection
+    
+    if (this.direction === "Right" && newDirection !== "Left"
+        || this.direction === "Left" && newDirection !== "Right"
+        || this.direction === "Up" && newDirection !== "Down"
+        || this.direction === "Down" && newDirection !== "Up")
+    {
+    this.direction = newDirection;
+    }
   }
 
   move() {
-    const oldHead = this.getHead()
+    const oldHead = this.getHead();    
     
-    if(this.direction === 'Right'){
-    this.head = new Cell(oldHead.x +1, oldHead.y)
-
-    this.tail.shift()
-    this.tail.push(new Cell(oldHead.x, oldHead.y))
-    return
+    if (this.direction === "Right") {
+      this.head = new Cell(oldHead.x + 1, oldHead.y);
     }
 
-    if(this.direction === 'Down'){
-      this.head = new Cell(oldHead.x, oldHead.y +1)
-  
-      this.tail.shift()
-      this.tail.push(new Cell(oldHead.x, oldHead.y))
-      return
+    if (this.direction === "Down") {
+      this.head = new Cell(oldHead.x, oldHead.y + 1);
     }
 
-    if(this.direction === 'Up'){
-      this.head = new Cell(oldHead.x, oldHead.y -1)
-  
-      this.tail.shift()
-      this.tail.push(new Cell(oldHead.x, oldHead.y))
-      return
+    if (this.direction === "Up") {
+      this.head = new Cell(oldHead.x, oldHead.y - 1);
     }
 
-    if(this.direction === 'Left'){
-      this.head = new Cell(oldHead.x -1, oldHead.y)
-  
-      this.tail.shift()
-      this.tail.push(new Cell(oldHead.x, oldHead.y))
-      return
+    if (this.direction === "Left") {
+      this.head = new Cell(oldHead.x - 1, oldHead.y);
     }
-  
 
+    this.tail.shift();
+    this.tail.push(new Cell(oldHead.x, oldHead.y));
+
+    return;
   }
 
   grow() {
+    const tailEnd = this.tail[this.tail.length - 1];
+    const newTailEnd = new Cell(tailEnd.x, tailEnd.y);
+    this.tail.push(newTailEnd, newTailEnd, newTailEnd);
+    return;
   }
 
   getHead(): Cell {
@@ -57,7 +55,7 @@ export class Snake {
   }
 
   getDirection(): Direction {
-    return this.direction;
+    return this.direction
   }
 
   getTail(): Cell[] {
@@ -65,6 +63,9 @@ export class Snake {
   }
 
   isTakenBySnake(cell: Cell): boolean {
-    return false;
+    if(this.tail.some(part => part.y === this.head.y && part.x === this.head.x)){
+      return true
+    }
+    return false
   }
 }

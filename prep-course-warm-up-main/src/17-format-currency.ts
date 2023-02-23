@@ -10,7 +10,7 @@ export {};
 
 // You are allowed to change only this function
 function formatCurrency(amount: number) {
-  return '$' + amount.toFixed(2)
+  return "$" + amount.toFixed(2);
 }
 
 function calculateSalesTax(price: number) {

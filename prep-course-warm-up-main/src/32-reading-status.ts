@@ -25,11 +25,9 @@ const library = [
 ];
 
 const showStatus = (books: I_Book[]) => {
-  books.forEach((book) =>
+  books.forEach( book =>
     console.log(
-      `${book.isRead ? "Already read" : "You still need to read"} '${
-        book.title
-      }' by ${book.author}.`
+      `${book.isRead ? "Already read" : "You still need to read"} '${book.title}' by ${book.author}.`
     )
   );
 };

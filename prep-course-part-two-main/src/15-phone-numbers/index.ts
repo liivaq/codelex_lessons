@@ -42,7 +42,9 @@ class PhoneNumber {
           || cleaned.charAt(0) === '0'
           || cleaned.charAt(0) === '1'
           || cleaned.charAt(3) === '0'
-          || cleaned.charAt(3) === '1') {
+          || cleaned.charAt(3) === '1') 
+          
+          {
         return null;
       }
   

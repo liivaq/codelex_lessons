@@ -8,11 +8,16 @@ export {};
  */
 
 // You are allowed to edit only this function
-function remove(arr: (string | number)[], valueToRemove: string | number) {
-  const arrCopy = [...arr]
-  return arrCopy.filter((value: string | number) => value !== valueToRemove)
-}
+/*function remove(arr: (string | number)[], valueToRemove: string | number) {
+  const arrCopy = [...arr];
+  return arrCopy.filter((value) => value !== valueToRemove);
+}*/
 
+function remove(array: (string | number)[], valueToRemove: string | number){
+  const newArray = [...array]
+  newArray.splice(newArray.indexOf(valueToRemove), 1)
+  return newArray
+}
 
 const numbers = [1, 2, 3];
 const names = ["John", "Alice", "Ellen"];

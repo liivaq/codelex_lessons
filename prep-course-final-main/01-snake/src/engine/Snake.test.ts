@@ -40,4 +40,30 @@ describe("Snake", () => {
     expect(snake.getHead()).toEqual(new Cell(2, -1));
     expect(snake.getTail()).toEqual([new Cell(1, 0), new Cell(2, 0)]);
   })
+
+  it("should NOT be able to turn in the opposite direction", () => {
+    const snake = new Snake();
+
+    snake.setDirection('Up')
+    snake.move()
+    snake.setDirection('Down')
+    snake.move()
+
+    expect(snake.getDirection()).toEqual('Up');
+    expect(snake.getHead()).toEqual(new Cell(2, -2));
+    expect(snake.getTail()).toEqual([new Cell(2, 0), new Cell(2, -1)]);
+  })
+
+  it("snake should grow by three cells when apple has been eaten", () => {
+    const snake = new Snake();
+    snake.move()
+
+    snake.grow();
+
+    expect(snake.getTail().length).toEqual(5);;
+  })
+
+
+
+  
 });

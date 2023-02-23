@@ -5,8 +5,8 @@ export {};
 /**
  * Create a function called isBlank, which checks if passed string is blank or not
  */
-function isBlank (value: string | null): boolean {
-     return !value || value.trim() === ""        
+function isBlank(value: string | null): boolean {
+  return !value || value.trim() === "";
 }
 
 console.log(isBlank(null)); // Expected output: true

@@ -14,7 +14,7 @@ const allVowels: string[] = ['a', 'e', 'i', 'o', 'u']
 function vowels(word: string): number {
     const stringToArray = word.toLowerCase().split('');
     
-    let returnedVowels: string = ''
+    let returnedVowels = ''
     
     for(let i = 0; i <= stringToArray.length; i++) {
         if(allVowels.includes(stringToArray[i])){

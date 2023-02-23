@@ -16,23 +16,25 @@
  *              '#####'
  */
 
-/*function pyramid(n: number): void {
+function pyramid(rows: number): void {
 
-}*/
+  for (let i = 1; i <= rows; i++) {
+    let drawing = ''
 
-function pyramid(n: number): void {
-    const midpoint = n-1;
-    for (let row = 0; row < n; row++) {
-        let level = '';
-        for (let col = 0; col < 2 * n - 1; col++) {
-          if (midpoint - row <= col && midpoint + row >= col) {
-            level += '#';
-          } else {
-            level += ' ';
-          }
-        }
-        console.log(level);
-      }
+    for (let j = 1; j <= rows - i; j++) {
+      drawing += ' '
+    }
     
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      drawing += '#'
+    }
+    
+    for (let l = 1; l <= rows - i; l++) {
+      drawing += ' '
+    }
+
+    console.log(drawing)
   }
+}
+
 export { pyramid };

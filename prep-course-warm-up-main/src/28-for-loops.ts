@@ -7,17 +7,19 @@ export {};
  *  - https://javascript.info/while-for#the-for-loop
  *  - https://www.youtube.com/watch?v=wxds6MAtUQ0 (Intro to Programming: Loops)
  *  - https://www.youtube.com/watch?v=Kn06785pkJg (JavaScript Loops Made Easy)
-*/
+ */
 
-function goThroughNumbers(start: number, end:number) {
-    if (start>end){
-        console.log('invalid input')
-    }else{
-        for (let i = start; i <= end; i++){
-        let oddOrEven = (i:number) => i%2 === 0? 'even': 'odd'
-        console.log(`> ${i} - ${oddOrEven(i)}`)}
- }};
-        
+function goThroughNumbers(start: number, end: number) {
+  if (start > end) {
+    console.log("invalid input");
+  } else {
+    for (let i = start; i <= end; i++) {
+      const oddOrEven = (num: number) => (num % 2 === 0 ? "even" : "odd");
+      console.log(`> ${i} - ${oddOrEven(i)}`);
+    }
+  }
+}
+
 goThroughNumbers(3, 7);
 /* Expected output:
 

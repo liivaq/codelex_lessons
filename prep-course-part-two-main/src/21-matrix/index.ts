@@ -35,14 +35,20 @@
  */
 
 class Matrix {
-  constructor(private matrix: string) {}
+  matrix: string;
+
+  constructor(matrix: string) {
+    this.matrix = matrix;
+  }
 
   get rows() {
-    return [];
+    return this.matrix
+      .split("\n")
+      .map(number => number.split(" ").map(arrays => parseInt(arrays)));
   }
 
   get columns() {
-    return [];
+    return this.rows.map((_, index) => this.rows.map(row => row[index]))
   }
 }
 

@@ -1,4 +1,6 @@
 import { GameField } from "./GameField";
+import { Snake } from "./Snake";
+import { Cell } from "./Cell";
 
 describe("Game Field", () => {
   it("should have five apples present", () => {
@@ -8,4 +10,5 @@ describe("Game Field", () => {
 
     expect(apples.length).toBe(5);
   });
+    
 });

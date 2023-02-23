@@ -21,7 +21,6 @@ class Words {
       if (!wordCounts[word]) {
         wordCounts[word] = 0;
       }
-
       wordCounts[word]++;
     }
 

@@ -4,6 +4,7 @@ export class Game {
   cells: XO[] = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
   turn: XO = 'X'
 
+
   getCells(): XO[] {
     return this.cells;
   }
@@ -13,50 +14,52 @@ export class Game {
   }
 
   getWinner(): XO {
-    if (this.getCells()[0] === this.getCells()[1] && this.getCells()[0] === this.getCells()[2]){
-      return this.getCells()[0]
+    const board = this.getCells()
+    if(board[0] === board[3] && board[0] === board[6]){
+      return board[0]
     }
-
-    if (this.getCells()[3] === this.getCells()[4] && this.getCells()[5] === this.getCells()[3]){
-      return this.getCells()[3]
+    if(board[1] === board[4] && board[1] === board[7]){
+      return board[1]
     }
-
-    if (this.getCells()[6] === this.getCells()[7] && this.getCells()[8] === this.getCells()[7]){
-      return this.getCells()[6]
+    if(board[2] === board[5] && board[2] === board[8]){
+      return board[2]
     }
-
-    if (this.getCells()[0] === this.getCells()[3] && this.getCells()[6] === this.getCells()[0]){
-      return this.getCells()[0]
+    if(board[0] === board[1] && board[0] === board[2]){
+      return board[0]
     }
-
-    if (this.getCells()[1] === this.getCells()[4] && this.getCells()[7] === this.getCells()[1]){
-      return this.getCells()[1]
+    if(board[3] === board[4] && board[5] === board[4]){
+      return board[3]
     }
-
-    if (this.getCells()[2] === this.getCells()[5] && this.getCells()[8] === this.getCells()[2]){
-      return this.getCells()[2]
+    if(board[6] === board[7] && board[8] === board[6]){
+      return board[6]
     }
-
-    if (this.getCells()[0] === this.getCells()[8] && this.getCells()[4] === this.getCells()[0]){
-      return this.getCells()[0]
+    if(board[0] === board[4] && board[8] === board[4]){
+      return board[0]
     }
-
-    if (this.getCells()[2] === this.getCells()[4] && this.getCells()[6] === this.getCells()[2]){
-      return this.getCells()[2]
+    if(board[2] === board[4] && board[6] === board[2]){
+      return board[2]
     }
-    return "-";
+    return "-"
+    
   }
 
   isTie(): boolean {
+    if(this.cells.every(value => value !== '-') && this.getWinner() === '-'){
+      return true
+    } 
     return false;
   }
 
   onClick(i: number): void {
-    this.cells[i] = this.getTurn() 
-    this.turn = this.getTurn() === 'X'? 'O' : 'X'
+    if (this.getWinner() !== '-') return;
+
+    if(this.cells[i] !== '-') return
+    this.cells[i] = this.getTurn()
+    this.turn = this.turn === 'X' ? 'O' : 'X'    
   }
 
   restart(): void {
-    console.log("restart called");
+    this.cells = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+    this.turn = 'X'
   }
 }

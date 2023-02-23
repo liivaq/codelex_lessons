@@ -1,7 +1,7 @@
 export {};
 
-const repeatString = (value:string, length:number) => {
-    return value.repeat(length);
+const repeatString = (value: string, length: number) => {
+  return value.repeat(length);
 };
 
 console.log(repeatString("a", 4)); // Expected output: 'aaaa'

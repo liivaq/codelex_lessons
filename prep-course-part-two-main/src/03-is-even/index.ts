@@ -12,8 +12,7 @@
 
 const evenNums = ['0', '2', '4', '6', '8']
 function isEven(nums: number) {
-    const integerAsString = nums.toString().split('.')[0];
-    const lastDigit = integerAsString[integerAsString.length - 1];
+    const lastDigit = nums.toString().split('.')[0].slice(-1);
     return evenNums.includes(lastDigit)
 }
 

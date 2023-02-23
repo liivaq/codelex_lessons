@@ -11,20 +11,20 @@ export {};
 
 interface Book {
   title: string;
-  author: string
+  author: string;
 }
 
 const books = [
   {
     title: "4 hour work week",
-    author: "Tim Ferris"
+    author: "Tim Ferris",
   },
   {
     title: "Tools of Titans",
-    author: "Tim Ferris"
-  }
+    author: "Tim Ferris",
+  },
 ];
 
-const getTheTitles = (books: Book[]) => books.map(book => book.title);
+const getTheTitles = (books: Book[]) => books.map((book) => book.title);
 
 console.log(getTheTitles(books)); // Expected output: ['4 hour work week', 'Tools of Titans']

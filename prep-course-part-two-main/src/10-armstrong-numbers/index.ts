@@ -16,10 +16,12 @@ function validate(number: number):boolean {
     const numberToArray: string[] = number.toString().split('');
     const toPower: number = numberToArray.length
     
-    let numberSumRaised:number = 0;
+    let numberSumRaised = 0;
+
     for (let i = 0; i < toPower; i++) {
         numberSumRaised += Math.pow(parseInt(numberToArray[i]), toPower)
     }
+    
     return numberSumRaised === number? true : false
     
 }

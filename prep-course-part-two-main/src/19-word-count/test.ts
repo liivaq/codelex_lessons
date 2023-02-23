@@ -90,7 +90,7 @@ describe("words()", () => {
       constructor: 1,
       and: 1,
       tostring: 1,
-      "ok?": 1
+      "ok?": 1,
     };
     expect(
       words.count("reserved words like constructor and toString ok?")

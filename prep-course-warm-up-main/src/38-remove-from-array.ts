@@ -1,6 +1,6 @@
 export {};
 
-const removeFromArray = function(numbers: number[], ...remove: number[]):number[] {
+const removeFromArray = (numbers: number[], ...remove: number[]):number[] => {
     return numbers.filter(number => !remove.includes(number))
 
 };

@@ -11,15 +11,15 @@ class HighScores {
   }
 
   get latest() {
-    return this.scores.pop();
+    return this.scores[this.scores.length - 1]
   }
 
   get personalBest() {
-    return this.scores.sort((a, b) => a - b).pop();
+    return Math.max(...this.scores)
   }
 
   get personalTopThree() {
-    return this.scores.sort((a, b) => b - a).slice(0, 3)
+    return [...this.scores].sort((a, b) => b - a).slice(0, 3)
   }
 }
 
